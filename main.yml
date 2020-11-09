@@ -1,5 +1,5 @@
 ---
-- name: Instalar jibri
+- name: Instalar JVB
   hosts: all
   become: yes
 
@@ -12,8 +12,8 @@
       - iftop
       - glance
       - docker-ce
-    vars_files:
-      - vars/jibri.yml
+  vars_files:
+    - vars/jvb.yml
   pre_tasks:
     - name: Adicionar repositorio do Serpro
       apt_repository:
