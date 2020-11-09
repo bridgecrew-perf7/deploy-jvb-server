@@ -1,0 +1,38 @@
+---
+- name: Instalar jibri
+  hosts: all
+  become: yes
+
+  vars:
+    pip_install_packages:
+      - name: docker
+    pacotes:
+      - linux-image-extra-virtual
+      - ngrep
+      - iftop
+      - glance
+      - docker-ce
+    vars_files:
+      - vars/jibri.yml
+  pre_tasks:
+    - name: Adicionar repositorio do Serpro
+      apt_repository:
+        repo: "{{ item }}"
+        state: present
+      with_items:
+        - deb [trusted=yes] http://update.blm.serpro/ubuntu-18.04 bionic-archive-serpro partner
+        - deb [trusted=yes] http://update.blm.serpro/ubuntu-18.04 bionic main restricted universe multiverse
+        - deb [trusted=yes] http://update.blm.serpro/ubuntu-18.04 bionic-regionais blm
+        - deb [trusted=yes] http://update.blm.serpro/ubuntu-18.04 bionic-serpro local
+    - name: atualizar cache apt
+      apt:
+        cache_valid_time: 86400 # um dia
+
+  tasks:
+    - include_tasks: tasks/instalar.yml
+    - include_tasks: tasks/configurar.yml
+      tags: configurar
+
+  # roles:
+  #   - ansible-role-docker
+  #   - ansible-role-pip

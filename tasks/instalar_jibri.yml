@@ -1,0 +1,6 @@
+---
+- name: Copiar compose file
+  template:
+    src: templates/opt/jibri/docker-compose.yml
+    dest: /opt/jibri/docker-compose.yml
+  
