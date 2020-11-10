@@ -24,10 +24,10 @@ JVB_OPTS: "--apis:rest,xmpp"
 JVB_PORT: 10000
 JVB_TCP_PORT: 4443
 JVB_TCP_MAPPED_PORT: 4443
+JVB_TCP_MAPPED_PORT: 4443
 JVB_COLIBRI_PORT: 8081
 RESTART_POLICY: unless-stopped
 # especifico da versao 5142
-JVB_TCP_MAPPED_PORT: 4443
 JVB_WS_DOMAIN:
 JVB_WS_SERVER_ID:
 PUBLIC_URL: https://chama-homologacao.serpro.gov.br
