@@ -21,5 +21,5 @@
 
 - name: Copiar compose file
   template:
-    src: opt/jvb/docker-compose.yml
+    src: opt/jvb-{{ IMAGEM_TAG }}/docker-compose.yml
     dest: "{{ JVB_INSTAL_PASTA }}/docker-compose.yml"
