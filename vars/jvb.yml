@@ -10,7 +10,7 @@ JVB_AUTH_PASSWORD: !vault |
           6632663265356239396636386134643864393239623434393232
 JVB_INSTAL_PASTA: /opt/jitsi/jvb
 JVB_CONFIG_PASTA: config
-IMAGEM_TAG: stable-4548
+IMAGEM_TAG: stable-4857
 XMPP_AUTH_DOMAIN: chama-homologacao.serpro.gov.br
 XMPP_SERVER: xmpp.chama-homologacao.serpro.gov.br
 XMPP_INTERNAL_MUC_DOMAIN: internal-muc.chama-homologacao.serpro.gov.br
