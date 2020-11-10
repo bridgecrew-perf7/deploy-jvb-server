@@ -12,7 +12,11 @@
     name: snd-aloop
     state: present
 
+
+- name: Criar pasta de instalação {{ CONFIG }}
+  file: path={{ CONFIG }}/conf state=directory
+
 - name: Copiar compose file
   template:
     src: opt/jvb/docker-compose.yml
-    dest: /opt/jvb/docker-compose.yml
+    dest: {{ CONFIG }}/docker-compose.yml
