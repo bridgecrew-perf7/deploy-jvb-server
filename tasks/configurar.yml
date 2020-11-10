@@ -14,7 +14,9 @@
 
 
 - name: "Criar pasta de instalação {{ CONFIG }}"
-  file: path="{{ CONFIG }}/conf state=directory"
+  file:
+    path: "{{ CONFIG }}"
+    state: directory
 
 - name: Copiar compose file
   template:
