@@ -17,6 +17,7 @@
   file:
     path: "{{ CONFIG }}"
     state: directory
+    recurse: yes
 
 - name: Copiar compose file
   template:
