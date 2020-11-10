@@ -16,7 +16,7 @@ XMPP_INTERNAL_MUC_DOMAIN: internal-muc.chama-homologacao.serpro.gov.br
 JVB_BREWERY_MUC: jvbbrewery
 JVB_AUTH_USER: jvb
 JVB_TCP_HARVESTER_DISABLED: true
-# JVB_STUN_SERVERS:
+JVB_STUN_SERVERS:
 JVB_ENABLE_APIS: rest,xmpp
 TZ: America/Fortaleza
 JVB_OPTS: "--apis:rest,xmpp"
