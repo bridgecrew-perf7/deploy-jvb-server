@@ -9,7 +9,7 @@ services:
             - '{{ JVB_TCP_MAPPED_PORT }}:{{ JVB_TCP_PORT }}'
             - '{{ JVB_COLIBRI_PORT }}:8080'
         volumes:
-            - {{ JVB_INSTAL_PASTA }}/{{ JVB_INSTAL_PASTA }}:/config:Z
+            - {{ JVB_INSTAL_PASTA }}/{{ JVB_CONFIG_PASTA }}:/config:Z
         environment:
             - DOCKER_HOST_ADDRESS={{ DOCKER_HOST_ADDRESS }}
             - XMPP_AUTH_DOMAIN={{ XMPP_AUTH_DOMAIN }}
