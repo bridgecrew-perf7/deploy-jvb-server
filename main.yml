@@ -10,12 +10,12 @@
       - linux-image-extra-virtual
       - ngrep
       - iftop
-      - glance
+      - glances
       - docker-ce
     pacotes_centos:
       - ngrep
       - iftop
-      - glance
+      - glances
       - docker-ce
   vars_files:
     - vars/jvb.yml
