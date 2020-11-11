@@ -23,8 +23,12 @@
   template:
     src: opt/jvb-{{ IMAGEM_TAG }}/docker-compose.yml
     dest: "{{ JVB_INSTAL_PASTA }}/docker-compose.yml"
-
-- name: Subir stack do compose
-  community.general.docker_compose:
-    project_src: "{{ JVB_INSTAL_PASTA }}/docker-compose.yml"
-  register: output
+# - name: Subir stack do compose
+#   community.general.docker_compose:
+#     project_src: "{{ JVB_INSTAL_PASTA }}/docker-compose.yml"
+#   register: output
+- name: Change the working directory to somedir/ and run the command as db_owner if /path/to/database does not exist
+  command: docker-compose up -d
+  args:
+    chdir: "{{ JVB_INSTAL_PASTA }}/"
+    creates: /path/to/database
