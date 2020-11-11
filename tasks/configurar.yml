@@ -27,8 +27,12 @@
 #   community.general.docker_compose:
 #     project_src: "{{ JVB_INSTAL_PASTA }}/docker-compose.yml"
 #   register: output
+- name: Checar Status do container
+  command: docker container inspect -f '{{.State.Running}}' {{ CONTAINER_NOME }}
+  register: container_status
+
 - name: Iniciar stack docker
   command: docker-compose up -d
   args:
     chdir: "{{ JVB_INSTAL_PASTA }}/"
-    creates: /path/to/database
+  when: container_status.stdout != true
