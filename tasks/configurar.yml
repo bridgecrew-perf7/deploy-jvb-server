@@ -28,7 +28,7 @@
 #     project_src: "{{ JVB_INSTAL_PASTA }}/docker-compose.yml"
 #   register: output
 - name: Checar Status do container
-  command: docker container inspect -f {{.State.Running}} {{ CONTAINER_NOME }}
+  command: docker ps | egrep {{ CONTAINER_NOME }}
   register: container_status
 
 - name: Iniciar stack docker
