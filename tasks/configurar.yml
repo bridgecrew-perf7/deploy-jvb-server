@@ -23,3 +23,8 @@
   template:
     src: opt/jvb-{{ IMAGEM_TAG }}/docker-compose.yml
     dest: "{{ JVB_INSTAL_PASTA }}/docker-compose.yml"
+
+- name: Subir stack do compose
+  community.general.docker_compose:
+    project_src: "{{ JVB_INSTAL_PASTA }}/docker-compose.yml"
+  register: output
