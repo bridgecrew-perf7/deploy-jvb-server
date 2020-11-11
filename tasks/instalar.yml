@@ -1,5 +1,12 @@
 ---
-- name: Instalar pacotes
+- name: Instalar pacotes em debian like
   package:
-    name: "{{ pacotes }}"
+    name: "{{ pacotes_deb }}"
     state: present
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
+- name: Instalar pacotes em Centos
+  package:
+    name: "{{ pacotes_centos }}"
+    state: present
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
