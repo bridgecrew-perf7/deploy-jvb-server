@@ -6,6 +6,3 @@ roles:
 - src: git@git.serpro:opsmc/ansible/roles/ansible-role-pip.git
   scm: git
   name: ansible-role-pip
-
-collections:
-- name: community.docker

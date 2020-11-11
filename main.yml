@@ -32,11 +32,12 @@
         - deb [trusted=yes] http://update.blm.serpro/ubuntu-18.04 bionic-regionais blm
         - deb [trusted=yes] http://update.blm.serpro/ubuntu-18.04 bionic-serpro local
       when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
-
+      tags: repositorio
     - name: atualizar cache apt
       apt:
         cache_valid_time: 86400 # um dia
       when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
   tasks:
     - include_tasks: tasks/instalar.yml
     - include_tasks: tasks/configurar.yml
