@@ -27,7 +27,7 @@
 #   community.general.docker_compose:
 #     project_src: "{{ JVB_INSTAL_PASTA }}/docker-compose.yml"
 #   register: output
-- name: Change the working directory to somedir/ and run the command as db_owner if /path/to/database does not exist
+- name: Iniciar stack docker
   command: docker-compose up -d
   args:
     chdir: "{{ JVB_INSTAL_PASTA }}/"
