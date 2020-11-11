@@ -30,3 +30,4 @@ RESTART_POLICY: unless-stopped
 JVB_WS_DOMAIN:
 JVB_WS_SERVER_ID:
 PUBLIC_URL: https://chama-homologacao.serpro.gov.br
+CONTAINER_NOME: chama-jvb
