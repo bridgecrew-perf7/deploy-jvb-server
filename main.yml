@@ -12,7 +12,7 @@
       - iftop
       - glances
       - docker-ce
-      - docker-compose
+      # - docker-compose
     pacotes_centos:
       - ngrep
       - iftop
