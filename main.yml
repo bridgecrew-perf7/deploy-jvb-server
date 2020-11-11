@@ -12,11 +12,13 @@
       - iftop
       - glances
       - docker-ce
+      - docker-compose
     pacotes_centos:
       - ngrep
       - iftop
       - glances
       - docker-ce
+      - docker-compose
   vars_files:
     - vars/jvb.yml
   pre_tasks:
