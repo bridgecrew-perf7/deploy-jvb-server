@@ -23,16 +23,16 @@
   template:
     src: opt/jvb-{{ IMAGEM_TAG }}/docker-compose.yml
     dest: "{{ JVB_INSTAL_PASTA }}/docker-compose.yml"
-# - name: Subir stack do compose
-#   community.general.docker_compose:
-#     project_src: "{{ JVB_INSTAL_PASTA }}/docker-compose.yml"
-#   register: output
-- name: Checar Status do container
-  command: docker ps | egrep {{ CONTAINER_NOME }}
-  register: container_status
-
-- name: Iniciar stack docker
-  command: docker-compose up -d
-  args:
-    chdir: "{{ JVB_INSTAL_PASTA }}/"
-  when: container_status.stdout != true
+- name: Subir stack do compose
+  docker_compose:
+    project_src: "{{ JVB_INSTAL_PASTA }}/docker-compose.yml"
+  register: docker_compose_output
+# - name: Checar Status do container
+#   command: 'docker container inspect -f {{.State.Running}}' chama-jvb
+#   register: container_status
+#
+# - name: Iniciar stack docker
+#   command: docker-compose up -d
+#   args:
+#     chdir: "{{ JVB_INSTAL_PASTA }}/"
+#   when: container_status.stdout != true
