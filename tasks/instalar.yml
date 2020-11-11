@@ -9,4 +9,4 @@
   package:
     name: "{{ pacotes_centos }}"
     state: present
-  when: ansible_distribution == 'Centos'
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat
