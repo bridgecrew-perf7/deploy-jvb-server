@@ -38,6 +38,7 @@
   tasks:
     - include_tasks: tasks/instalar.yml
     - include_tasks: tasks/configurar.yml
+    - include_tasks: tasks/servidor.yml
       tags: configurar
 
   # roles:
