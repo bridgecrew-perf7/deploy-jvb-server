@@ -1,5 +1,5 @@
 ---
-DOCKER_HOST_ADDRESS: {{ ansible_eth0.ipv4.address }}
+DOCKER_HOST_ADDRESS: "{{ ansible_eth0.ipv4.address }}"
 PUBLIC_URL: https://chama-homologacao.serpro.gov.br
 JVB_AUTH_PASSWORD: !vault |
           $ANSIBLE_VAULT;1.1;AES256
