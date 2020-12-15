@@ -31,12 +31,52 @@
         - deb [trusted=yes] http://update.blm.serpro/ubuntu-18.04 bionic main restricted universe multiverse
         - deb [trusted=yes] http://update.blm.serpro/ubuntu-18.04 bionic-regionais blm
         - deb [trusted=yes] http://update.blm.serpro/ubuntu-18.04 bionic-serpro local
-      when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+      when:
+        - ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+        - instalar_repositorio_serpro
       tags: repositorio
     - name: atualizar cache apt
       apt:
         cache_valid_time: 86400 # um dia
       when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
+    - name: Instalar pré requisitos Docker
+      apt: name={{ item }} state=latest update_cache=yes
+      loop: [ 'apt-transport-https', 'ca-certificates', 'curl', 'software-properties-common', 'python3-pip', 'virtualenv', 'python3-setuptools']
+      when:
+        - ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+        - instalar_repositorio_docker | bool
+
+    - name: "Adicionar chave GPG: {{instalar_repositorio_docker}}"
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+      when:
+        - ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+        - instalar_repositorio_docker | bool
+
+    - name: Adicionar repositório oficial docker
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu bionic stable
+        state: present
+      when:
+        - ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+        - instalar_repositorio_docker | bool
+
+    - name: Atualizar cache apt
+      apt: update_cache=yes name=docker-ce state=latest
+      when:
+        - ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+        - instalar_repositorio_docker | bool
+
+    - name: instalar docker-compose
+      get_url:
+        url: https://github.com/docker/compose/releases/download/1.27.4/docker-compose-Linux-x86_64
+        dest: /usr/local/bin/docker-compose
+        mode: 0755
+      when:
+        - ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+        - instalar_repositorio_docker | bool
 
   tasks:
     - include_tasks: tasks/instalar.yml
