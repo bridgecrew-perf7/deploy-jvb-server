@@ -34,7 +34,7 @@
       when:
         - ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
         - instalar_repositorio_serpro
-      tags: repositorio
+      tags: repositorios
     - name: atualizar cache apt
       apt:
         cache_valid_time: 86400 # um dia
@@ -54,6 +54,7 @@
       when:
         - ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
         - instalar_repositorio_docker | bool
+      tags: repositorios
 
     - name: Adicionar repositório oficial docker
       apt_repository:
@@ -62,6 +63,8 @@
       when:
         - ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
         - instalar_repositorio_docker | bool
+      tags: repositorios
+
 
     - name: Atualizar cache apt
       apt: update_cache=yes name=docker-ce state=latest
