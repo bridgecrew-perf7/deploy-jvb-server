@@ -21,11 +21,15 @@
 
 - name: Copiar compose file
   template:
-    src: opt/jvb-{{ IMAGEM_TAG }}/docker-compose.yml
+    src: opt/jitsi/jvb/docker-compose.yml
     dest: "{{ JVB_INSTAL_PASTA }}/docker-compose.yml"
+  register: compose_file_status
 
-- name: Iniciar stack docker
-  command: docker-compose up -d
+- name: Compose file mudou. Reconstruindo o stack
+  shell: |
+    docker-compose stop
+    docker-compose rm -f
+    docker-compose up -d
   args:
     chdir: "{{ JVB_INSTAL_PASTA }}/"
-  tags: docker
+  when: compose_file_status.changed
