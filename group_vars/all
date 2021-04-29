@@ -10,7 +10,7 @@ JVB_CONFIG_PASTA: config
 IMAGEM_TAG: stable-5142
 XMPP_AUTH_DOMAIN: auth.chamacloud.serpro.gov.br
 XMPP_SERVER: xmpp.chamacloud.serpro.gov.br
-XMPP_INTERNAL_MUC_DOMAIN:  internal-muc.chamacloud.serpro.gov.br
+XMPP_INTERNAL_MUC_DOMAIN: internal-muc.chamacloud.serpro.gov.br
 JVB_PORT: 10000
 JVB_TCP_PORT: 443
 JVB_TCP_MAPPED_PORT: 443
