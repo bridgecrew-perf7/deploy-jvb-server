@@ -12,15 +12,15 @@ XMPP_AUTH_DOMAIN: chama-homologacao.serpro.gov.br
 XMPP_SERVER: xmpp.chama-homologacao.serpro.gov.br
 XMPP_INTERNAL_MUC_DOMAIN: internal-muc.chama-homologacao.serpro.gov.br
 JVB_PORT: 10000
-JVB_TCP_PORT: 4443
-JVB_TCP_MAPPED_PORT: 4443
+JVB_TCP_PORT: 443
+JVB_TCP_MAPPED_PORT: 443
 JVB_COLIBRI_PORT: 8081
 # Nome do container a ser criado
 CONTAINER_NOME: chama-jvb
 # Os valores a seguir dificilmente deverao ser alterados
 JVB_BREWERY_MUC: jvbbrewery
 JVB_AUTH_USER: jvb
-JVB_TCP_HARVESTER_DISABLED: true
+JVB_TCP_HARVESTER_DISABLED: false
 JVB_STUN_SERVERS:
 JVB_ENABLE_APIS: rest,xmpp
 TZ: America/Fortaleza
