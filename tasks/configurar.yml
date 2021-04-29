@@ -12,7 +12,6 @@
     name: snd-aloop
     state: present
 
-
 - name: "Criar pasta de instalação e config {{ JVB_INSTAL_PASTA }}/{{ JVB_CONFIG_PASTA }}"
   file:
     path: "{{ JVB_INSTAL_PASTA }}/{{ JVB_CONFIG_PASTA }}"
@@ -38,3 +37,9 @@
   args:
     chdir: "{{ JVB_INSTAL_PASTA }}/"
   when: compose_file_status.changed
+
+- name: Reiniciar o jvb para aparecer o relayID no Jicofo
+  shell: |
+    sleep 10
+    docker-compose restart
+
