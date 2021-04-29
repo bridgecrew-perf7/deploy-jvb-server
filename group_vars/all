@@ -2,15 +2,15 @@
 instalar_repositorio_serpro: true
 instalar_repositorio_docker: false
 DOCKER_HOST_ADDRESS: "{{ ansible_eth0.ipv4.address }}"
-PUBLIC_URL: https://chama-homologacao.serpro.gov.br
-JVB_AUTH_PASSWORD: ME_TROQUE
+PUBLIC_URL: https://chamacloud.serpro.gov.br
+JVB_AUTH_PASSWORD: f1b41f0e612507f8c2c00157972e32a0
 JVB_INSTAL_PASTA: /opt/jitsi/jvb
 JVB_CONFIG_PASTA: config
 # a imagem tem que ter o mesmo tag em todos os elementos
 IMAGEM_TAG: stable-5142
-XMPP_AUTH_DOMAIN: chama-homologacao.serpro.gov.br
-XMPP_SERVER: xmpp.chama-homologacao.serpro.gov.br
-XMPP_INTERNAL_MUC_DOMAIN: internal-muc.chama-homologacao.serpro.gov.br
+XMPP_AUTH_DOMAIN: auth.chamacloud.serpro.gov.br
+XMPP_SERVER: xmpp.chamacloud.serpro.gov.br
+XMPP_INTERNAL_MUC_DOMAIN:  internal-muc.chamacloud.serpro.gov.br
 JVB_PORT: 10000
 JVB_TCP_PORT: 443
 JVB_TCP_MAPPED_PORT: 443
@@ -27,5 +27,5 @@ TZ: America/Fortaleza
 JVB_OPTS: "--apis:rest,xmpp"
 RESTART_POLICY: unless-stopped
 # especifico da versao 5142
-JVB_WS_DOMAIN:
-JVB_WS_SERVER_ID:
+JVB_WS_DOMAIN: chamacloud.serpro.gov.br:443
+JVB_WS_SERVER_ID: jvb1
