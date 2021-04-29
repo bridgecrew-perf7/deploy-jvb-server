@@ -28,4 +28,4 @@ JVB_OPTS: "--apis:rest,xmpp"
 RESTART_POLICY: unless-stopped
 # especifico da versao 5142
 JVB_WS_DOMAIN: chamacloud.serpro.gov.br:443
-JVB_WS_SERVER_ID: jvb1
+JVB_WS_SERVER_ID: jvb2
