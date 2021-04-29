@@ -27,7 +27,7 @@
 
 - name: Copiar arquivo customizado para octo no jvb interno
   template:
-    src: opt/jitsi/jvb/custom-sip-communicator.properties
+    src: opt/jitsi/jvb/config/custom-sip-communicator.properties
     dest: "{{ JVB_INSTAL_PASTA }}/{{ JVB_CONFIG_PASTA }}"
 
 - name: Compose file mudou. Reconstruindo o stack
