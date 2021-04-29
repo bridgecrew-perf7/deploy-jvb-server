@@ -42,4 +42,5 @@
   shell: |
     sleep 10
     docker-compose restart
-
+  args:
+    chdir: "{{ JVB_INSTAL_PASTA }}/"
