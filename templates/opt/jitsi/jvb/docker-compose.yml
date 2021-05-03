@@ -1,5 +1,9 @@
 version: '3'
 
+networks:
+    jvb_default:
+        enable_ipv6: false
+        
 services:
     jvb:
         image: jitsi/jvb:{{ IMAGEM_TAG }}
