@@ -1,9 +1,5 @@
 version: '3'
 
-networks:
-    jvb_default:
-        enable_ipv6: false
-        
 services:
     jvb:
         image: jitsi/jvb:{{ IMAGEM_TAG }}
@@ -36,3 +32,9 @@ services:
             - PUBLIC_URL={{PUBLIC_URL}}
             - TZ={{TZ}}
             - JVB_OPTS={{ JVB_OPTS }}
+        networks:
+            jvb_default:
+
+networks:
+    jvb_default:
+        enable_ipv6: false
