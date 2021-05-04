@@ -31,5 +31,4 @@ services:
             - JVB_WS_SERVER_ID={{JVB_WS_SERVER_ID}}
             - PUBLIC_URL={{PUBLIC_URL}}
             - TZ={{TZ}}
-            - JVB_OPTS={{JVB_OPTS}}
-            - ENABLE_IPV6={{ENABLE_IPV6}}
+            - JVB_OPTS={{JVB_OPTS}}            
